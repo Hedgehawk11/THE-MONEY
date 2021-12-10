@@ -37,7 +37,7 @@ while True:
         else:
             cash += choice2 * 3
 
-if choice1 == 'upgrades':
+  if choice1 == 'upgrades':
         choice2 = input(
             'what do you want to buy \n \u001b[36m work more $1000 \n \u001b[35m insurance $1,000,000 BUY THIS ONE TIME \u001b[37m \n'
         )
@@ -49,12 +49,12 @@ if choice1 == 'upgrades':
             cash -= 1000000
             is_boosted = True
 
-if choice1 == 'work':
+  if choice1 == 'work':
         t.sleep(10)
         cash += worker
         print('you worked and got money')
 
-if choice1 == 'lottery':
+  if choice1 == 'lottery':
         cash -= 5
         if r.randint(1, 1000) == 1:
             print('we have a winner')
@@ -62,7 +62,7 @@ if choice1 == 'lottery':
         else:
             print('\u001b[31m you wasted 5 bucks\u001b[37m ')
 
-if choice1 == 'donate':
+  if choice1 == 'donate':
         choice2 = input(
             'would you like to donate to charity or donate to animal shelter? \n'
         )
@@ -87,7 +87,7 @@ if choice1 == 'donate':
                 )
                 cash += 1000
 
-    if choice1 == "buy":
+  if choice1 == "buy":
         y = input("where would you like to shop food/de mart\n")
         if y == "food":
             fud = input(
@@ -134,7 +134,7 @@ if choice1 == 'donate':
           
           
 
-    if choice1 == 'cheat':
+  if choice1 == 'cheat':
         print('enter cheat code')
         cheat = input()
         my_secret = os.environ['cheat1']
@@ -167,7 +167,7 @@ if choice1 == 'donate':
           print('hi')
 
 
-    if bills == 2 and not nobill:
+  if bills == 2 and not nobill:
         pay = input('You need to pay your bills. Will you? ')
         if pay != "yes":
             cash = 0
