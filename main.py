@@ -2,7 +2,7 @@ import os
 import time as t
 import random as r
 import sys as sus
-
+food=50
 x = 99**499
 cash = 15
 worker = r.randint(1, 1000)
@@ -10,13 +10,14 @@ is_boosted = False
 bills = r.randint(1, 2)
 nobill = False
 
-print('THE MONEY(now with stock)\n')
+print('THE MONEY(now with stock)')
 while True:
-    bills = r.randint(1, 2)
-    print('you have $' + str(cash))
-    choice1 = input('invest/upgrades/work/lottery/donate/buy/cheat/ ')
+  print("food levels are ",food)
+  food-=1
+  print('you have $' + str(cash))
+  choice1 = input('\033[34minvest/upgrades/work/lottery/donate/buy/cheat/ \033[37m \n')
 
-    if choice1 == 'invest':
+  if choice1 == 'invest':
         while True:
             choice2 = int(input('how much MONEY do you want to invest '))
             if choice2 <= cash:
@@ -36,7 +37,7 @@ while True:
         else:
             cash += choice2 * 3
 
-    if choice1 == 'upgrades':
+  if choice1 == 'upgrades':
         choice2 = input(
             'what do you want to buy \n \u001b[36m work more $1000 \n \u001b[35m insurance $1,000,000 BUY THIS ONE TIME \u001b[37m \n'
         )
@@ -48,12 +49,12 @@ while True:
             cash -= 1000000
             is_boosted = True
 
-    if choice1 == 'work':
+  if choice1 == 'work':
         t.sleep(10)
         cash += worker
         print('you worked and got money')
 
-    if choice1 == 'lottery':
+  if choice1 == 'lottery':
         cash -= 5
         if r.randint(1, 1000) == 1:
             print('we have a winner')
@@ -61,7 +62,7 @@ while True:
         else:
             print('\u001b[31m you wasted 5 bucks\u001b[37m ')
 
-    if choice1 == 'donate':
+  if choice1 == 'donate':
         choice2 = input(
             'would you like to donate to charity or donate to animal shelter? \n'
         )
@@ -86,7 +87,7 @@ while True:
                 )
                 cash += 1000
 
-    if choice1 == "buy":
+  if choice1 == "buy":
         y = input("where would you like to shop food/de mart\n")
         if y == "food":
             fud = input(
@@ -97,13 +98,13 @@ while True:
                 print('successfully bought pizza')
                 cash -= 7 * pizza
             elif fud == "burger":
-                burger = input("how many burgers do you wanna get\n")
+                burger = int(input("how many burgers do you wanna get\n"))
                 print('successfully bought burger(s)')
-                cash -= 5 * pizza
+                cash -= 5 * burger
             elif fud == "fries":
                 discount = r.randint(1, 10)
                 if discount <= 8:
-                    fries = input("How many fries you want?")
+                    fries = int(input("How many fries you want?"))
                     print('Successfully bought fries.')
                     cash -= 2 * fries
                 elif discount <= 10:
@@ -117,11 +118,23 @@ while True:
                     cash -= 12
                     ('bought box of cans (sprite)')
                 elif q == "normal sprite can" or q == "sprite can":
-                    sprite = input('how many sprite cans you want?\n')
+                    sprite = int(input('how many sprite cans you want?\n'))
                     cash -= 1 * sprite
                     print('successfuly bought')
+                elif q == "big sprite bottle":
+                  sprite = int(input('How many big bottles do you want? \n'))
+                  cash -= 11 * sprite
+                  print ('successfully bought the party size sprite bottle \n')
+                elif q == "plastic sprite bottle":
+                  cash -= 3
+                  print ('Successfully bought')
+        elif y == 'de mart':
+          print ('De Mart is currently under construction, sorry.')
+          
+          
+          
 
-    if choice1 == 'cheat':
+  if choice1 == 'cheat':
         print('enter cheat code')
         cheat = input()
         my_secret = os.environ['cheat1']
@@ -154,8 +167,8 @@ while True:
           print('hi')
 
 
-    if bills == 2 and not nobill:
-        pay = input('You need to pay your bills. Will you?')
+  if bills == 2 and not nobill:
+        pay = input('You need to pay your bills. Will you? ')
         if pay != "yes":
             cash = 0
             print('You did not pay your bills and the IRS took your money. and you died unexpectedly')
@@ -169,5 +182,5 @@ while True:
         if cash == 0:
             cash = 10
 
-    if cash <= 0:
+  if cash <= 0:
         sus.exit("you're broke")
