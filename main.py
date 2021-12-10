@@ -182,5 +182,5 @@ while True:
         if cash == 0:
             cash = 10
 
-    if cash <= 0:
+  if cash <= 0:
         sus.exit("you're broke")
