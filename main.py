@@ -168,19 +168,20 @@ while True:
 
 
   if bills == 2 and not nobill:
-        pay = input('You need to pay your bills. Will you? ')
-        if pay != "yes":
-            cash = 0
-            print('You did not pay your bills and the IRS took your money. and you died unexpectedly')
-            sus.exit("PAY.YOUR.BILLS.")
+        w = input('You need to pay your bills. Will you? ')
+        if 2 != "yes" or w != '':
+          cash = 0
+          print('You did not pay your bills and the IRS took your money. and you died unexpectedly')
+          sus.exit("PAY.YOUR.BILLS.")
         else:
-            vary = r.randint(1, 10)
-            if vary <= 9:
-                cash -= 10
-            else:
-                cash -= 15
-        if cash == 0:
-            cash = 10
+          vary = r.randint(1, 10)
+          if vary <= 9:
+            cash -= 10
+          elif vary <= 10:
+            cash -= 15
 
   if cash <= 0:
-        sus.exit("you're broke")
+      sus.exit("you're broke and died")
+  if food <= 0:
+        sus.exit ("you died of hunger...")
+  
